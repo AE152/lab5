@@ -1,0 +1,36 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="450" d:DesignHeight="150"
+		Width="450" Height="150"
+        x:Class="lab5.Views.RegexWindow"
+        Title="RegexWindow">
+<Grid ShowGridLines="True">
+
+		<Grid.RowDefinitions>
+			<RowDefinition Height="70"></RowDefinition>
+			<RowDefinition Height="*"></RowDefinition>
+			<RowDefinition Height="*"></RowDefinition>
+		</Grid.RowDefinitions>
+		
+		<Grid.ColumnDefinitions>		
+			<ColumnDefinition Width="*"></ColumnDefinition>
+		</Grid.ColumnDefinitions>
+
+		<TextBox Name="textRegVr" Text="{Binding Path}" Grid.Row="0" Grid.Column="0">
+		</TextBox>
+
+
+		<Button Grid.Row="1" Grid.Column="0"
+		Name="OkeyNow"  Content="OK"
+		HorizontalContentAlignment="Center" HorizontalAlignment="Stretch"
+		VerticalContentAlignment="Center" VerticalAlignment="Stretch">
+
+		</Button>
+		<Button Grid.Row="2" Grid.Column="0" 
+			Name="CancelNow" HorizontalContentAlignment="Center"  Content="Cancel"
+		HorizontalAlignment="Stretch" VerticalContentAlignment="Center" VerticalAlignment="Stretch">
+		</Button>
+	</Grid>
+</Window>

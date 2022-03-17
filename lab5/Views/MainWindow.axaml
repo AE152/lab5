@@ -1,0 +1,57 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:lab5.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="450" d:DesignHeight="600"
+		Width="450" Height="600"
+        x:Class="lab5.Views.MainWindow"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="lab5">
+
+	<Design.DataContext>
+		<vm:MainWindowViewModel/>
+	</Design.DataContext>
+	<Window.Styles>
+		<Style Selector="Button">
+			<Setter Property="Margin" Value="0"></Setter>
+		</Style>
+	</Window.Styles>
+	<Grid ShowGridLines="False">
+
+		<Grid.RowDefinitions>
+			<RowDefinition Height="480"></RowDefinition>
+			<RowDefinition Height="*"></RowDefinition>
+			<RowDefinition Height="*"></RowDefinition>
+		</Grid.RowDefinitions>
+
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*"></ColumnDefinition>
+			<ColumnDefinition Width="*"></ColumnDefinition>
+		</Grid.ColumnDefinitions>
+
+		<TextBox AcceptsReturn="True" TextWrapping="Wrap" Text="{Binding Text}" Grid.Row="0" Grid.Column="0">
+		</TextBox>
+
+		<TextBox Text="{Binding RegularResult}" Focusable="False" Grid.Row="0" Grid.Column="1">
+		</TextBox>
+
+		<Button Grid.Row="1" Grid.Column="0"
+		Name="OpenFileNow"   Content="Open file"
+		HorizontalContentAlignment="Center" HorizontalAlignment="Stretch"
+		VerticalContentAlignment="Center" VerticalAlignment="Stretch">
+
+		</Button>
+		<Button Grid.Row="1" Grid.Column="1"
+		Name="SaveFileNow"  Content="Save file"
+		HorizontalContentAlignment="Center" HorizontalAlignment="Stretch"
+		VerticalContentAlignment="Center" VerticalAlignment="Stretch">
+		</Button>
+		
+		<Button Click="MyClickEventHandler" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
+		Name="SetRegexNow" HorizontalContentAlignment="Center"  Content="Set Regex"
+		HorizontalAlignment="Stretch" VerticalContentAlignment="Center" VerticalAlignment="Stretch">
+		</Button>
+	</Grid>
+
+</Window>
