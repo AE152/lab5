@@ -24,6 +24,7 @@ namespace RegexCl.Models
                     result += (x.Value + "\n");
                 }
             }
+
             return result;
         }
     }
